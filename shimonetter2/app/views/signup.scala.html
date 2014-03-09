@@ -1,0 +1,18 @@
+@(msg: String, signupForm: Form[models.User]) 
+@import helper._ 
+
+@main{
+
+<h1>Come and Join us!</h1>
+<p>@msg</p>
+@helper.form(action = routes.SignupController.execSignup){ 
+@(inputText (field=signupForm("userName") ))
+@(inputRadioGroup (
+field=signupForm("sex"),
+ options = Seq("íj"->"íj","èó"->"èó") ))
+  @(inputDate
+( field=signupForm("Date") ))
+
+<input type="submit">
+} 
+}
