@@ -1,18 +1,21 @@
 @(msg: String, signupForm: Form[models.User]) 
-@import helper._ 
+@import helper.twitterBootstrap._ 
 
 @main{
 
 <h1>Come and Join us!</h1>
 <p>@msg</p>
+<div class="" id="signUpForm">
 @helper.form(action = routes.SignupController.execSignup){ 
-@(inputText (field=signupForm("userName") ))
-@(inputRadioGroup (
+@(helper.inputText (field=signupForm("userName") ))
+@(helper.inputRadioGroup (
 field=signupForm("sex"),
- options = Seq("male"->"’j","female"->"—") ))
-  @(inputDate
+ options = Seq("male"->"male","female"->"female"),
+ '_label->"Gender" ))
+  @(helper.inputDate
 ( field=signupForm("birthday") ))
 
 <input type="submit">
 } 
+</div>
 }
