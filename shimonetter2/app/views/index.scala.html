@@ -1,11 +1,16 @@
-@(msg: String)
+@(msg: String, netas: List[Shimoneta])
 
 @main{
 
         <div class="alert-message error">
             <p>
-                <strong>Hello!</strong> @msg
-            </p>
+                <strong>Hello!</strong> @msg</p>
+               @helper.form(action=routes.Application.send){
+               	@(helper.inputText(
+               		field=form)               
+               		}
+           
+            <pre>@netas</pre>
         </div>
         
         
