@@ -1,16 +1,20 @@
-@(msg: String, netas: List[Shimoneta])
+@(msg: String, loginForm: Form[models.User])
 
 @main{
 
         <div class="alert-message error">
             <p>
                 <strong>Hello!</strong> @msg</p>
-               @helper.form(action=routes.Application.send){
+               @helper.form(action=routes.Application.goIntoRoom){
                	@(helper.inputText(
-               		field=form)               
+               		field=loginForm("userName")
+               		
+               		))
+               		<input type="submit">               
                		}
+               		<button class="btn" type="submit" id="showSignup">Sign up</button>
            
-            <pre>@netas</pre>
+          
         </div>
         
         

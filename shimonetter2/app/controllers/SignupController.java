@@ -20,10 +20,7 @@ public class SignupController extends Controller {
 			return badRequest(signup.render("ERROR", form));
 		}
 	}
-	
-	public static Result showSignup(){
-		
-		return ok(signup.render("サインアップしようぜ", new Form(User.class)));
-	}
 }
+
+
 

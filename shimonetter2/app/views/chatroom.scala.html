@@ -1,1 +1,43 @@
-@()
+@(userName: String, tweetForm: Form[models.Shimoneta])
+@import helper._
+
+@main {
+    
+    <div class="page-header">
+        <h1>Welcome to the chat room <small>You are chatting as @userName</small></h1>
+    </div>
+    
+    <div id="onError" class="alert-message error">
+        <p>
+            <strong>Oops!</strong> <span></span>
+        </p>
+    </div>
+    
+    <div id="onChat" class="row">
+        <div class="span10" id="main">
+                @form(action=routes.Application.goIntoRoom){
+               	@(inputText(
+               		field=tweetForm("User.userName")
+               		
+               		))
+               	@(inputText(
+               		field=tweetForm("message")
+               		
+               		))
+               		
+               			
+               		<input type="submit">               
+               		}
+            <textarea id="talk"></textarea>
+	       	<div id="messages">
+            </div>
+        </div>
+        <div class="span4">
+            <h2>Members</h2>
+            <ul id="members">
+            </ul>
+        </div>
+    </div>
+    
+<!--    <script src="@routes.Assets.at("chatroom.js")" type="text/javascript"></script> -->
+}

@@ -8,7 +8,8 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("index.js")" type="text/javascript"></script>
     </head>
     <body>
         
@@ -19,9 +20,10 @@
                         <form class="pull-right">
                             <input id="username" name="username" class="input-small" type="text" placeholder="Username">
                             <button class="btn" type="submit">Sign in</button>
-                            <button class="btn" type="submit">Sign up</button>
+                        </form>
+                            <form action="/signup" method="get"><button type="submit">Sign up</button></form>
                             
-                        </form>                    
+                                            
                 </div>
             </div>
         </div>

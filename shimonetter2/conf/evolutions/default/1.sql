@@ -22,6 +22,7 @@ create table shimoneta_model (
 create table user (
   user_id                   bigint not null,
   user_name                 varchar(255),
+  sex                       varchar(255),
   birthday                  timestamp,
   constraint pk_user primary key (user_id))
 ;

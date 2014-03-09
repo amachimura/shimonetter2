@@ -6,7 +6,8 @@
 GET     /               controllers.Application.index()
 GET     /index          controllers.Application.index()
 GET     /chatroom       controllers.Application.goIntoRoom()
-GET		/signup			controllers.SignupController.showSignup()
+GET     /signup         controllers.Application.showSignup()
+POST    /execSignup     controllers.SignupController.execSignup()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

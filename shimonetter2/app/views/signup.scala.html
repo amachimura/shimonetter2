@@ -9,9 +9,9 @@
 @(inputText (field=signupForm("userName") ))
 @(inputRadioGroup (
 field=signupForm("sex"),
- options = Seq("’j"->"’j","—"->"—") ))
+ options = Seq("male"->"’j","female"->"—") ))
   @(inputDate
-( field=signupForm("Date") ))
+( field=signupForm("birthday") ))
 
 <input type="submit">
 } 

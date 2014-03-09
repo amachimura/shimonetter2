@@ -10,6 +10,7 @@ import javax.validation.*;
 import com.avaje.ebean.annotation.*;
 
 import play.db.ebean.*;
+import play.db.ebean.Model.Finder;
 import play.data.validation.*;
 import play.data.validation.Constraints.*;
 
@@ -25,4 +26,8 @@ public class User extends Model {
 	public Date birthday;
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="user")
 	public List<Shimoneta> messages= new ArrayList<Shimoneta>();
+	
+	public static Finder<Long, User> find =
+			new Finder<Long, User>(Long.class, User.class);
+
 }

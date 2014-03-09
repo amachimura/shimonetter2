@@ -16,13 +16,21 @@ public class Application extends Controller {
      */
 	
 	
-    public static Result index() {
-    	List<Shimoneta> netas = Shimoneta.find.all();
-        return ok(index.render("データベースのサンプル",netas));
+
+	public static Result index() {
+    	Form<User> loginForm = new Form<User>(User.class);
+        return ok(index.render("データベースのサンプル",loginForm));
     }
     
-    public static Result goIntoRoom(Long userId){
-		return ok(chatroom.render(userId));
+	public static Result showSignup(){
+		Form<User> signupForm = new Form<User>(User.class);
+		return ok(signup.render("サインアップしようぜ", signupForm));
+	}
+
+    
+    public static Result goIntoRoom(){
+    	Form<Shimoneta> tweetForm = new Form<Shimoneta>(Shimoneta.class);
+		return ok(chatroom.render("Gay1", tweetForm));
     	
     }
   
